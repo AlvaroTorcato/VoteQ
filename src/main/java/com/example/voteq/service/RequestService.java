@@ -18,7 +18,7 @@ import java.util.List;
 
 @Service
 public class RequestService {
-    String baseURL="http://localhost:8087/";
+    String baseURL="http://localhost:8086/";
     public String parseJwt(HttpServletRequest request) {
         String headerAuth = request.getHeader("Authorization");
 
@@ -47,7 +47,7 @@ public class RequestService {
     }
 
     public UserDetailsDTO makeRequestToAutentication(String jwt) {
-        String urlRequest = "http://localhost:8084/auth/search/" + jwt;
+        String urlRequest = "http://localhost:8087/auth/search/" + jwt;
         UserDetailsDTO user = null;
         try {
             InputStream responseStream = openConn(urlRequest).getInputStream();
@@ -74,7 +74,7 @@ public class RequestService {
     public int getStatusCodeOfReview(int reviewId) {
         int statusCode;
         try {
-            String urlRequest = "http://localhost:8082/reviews/search/" + reviewId;
+            String urlRequest = "http://localhost:8083/reviews/search/" + reviewId;
             URL url = new URL(urlRequest);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -93,7 +93,7 @@ public class RequestService {
         if(vote)str="true";
         else str="false";
         try {
-            String urlRequest = "http://localhost:8082/reviews/vote/"+rid+"/"+str;
+            String urlRequest = "http://localhost:8084/reviews/vote/"+rid+"/"+str;
             URL url = new URL(urlRequest);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
