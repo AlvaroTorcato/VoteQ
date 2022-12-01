@@ -15,7 +15,7 @@ import java.util.List;
 @Tag(name = "Votes", description = "Endpoints for managing votes")
 @RequestMapping("/votes")
 @RestController
-public class VoteController {
+public class  VoteController {
     @Autowired
     VoteService service;
 
