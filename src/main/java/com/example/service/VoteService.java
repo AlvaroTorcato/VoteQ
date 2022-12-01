@@ -1,11 +1,11 @@
-package com.example.voteq.service;
+package com.example.service;
 
 
-import com.example.voteq.model.UserDetailsDTO;
-import com.example.voteq.model.Vote;
-import com.example.voteq.model.VoteDTO;
-import com.example.voteq.model.VoteDetailsDTO;
-import com.example.voteq.repository.VoteRepository;
+import com.example.model.UserDetailsDTO;
+import com.example.model.Vote;
+import com.example.model.VoteDTO;
+import com.example.model.VoteDetailsDTO;
+import com.example.repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

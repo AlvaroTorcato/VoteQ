@@ -1,7 +1,7 @@
-package com.example.voteq.service;
+package com.example.service;
 
-import com.example.voteq.model.Vote;
-import com.example.voteq.repository.VoteRepository;
+import com.example.model.Vote;
+import com.example.repository.VoteRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;

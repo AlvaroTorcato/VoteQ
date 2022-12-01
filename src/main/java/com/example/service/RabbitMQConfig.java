@@ -1,4 +1,4 @@
-package com.example.voteq.service;
+package com.example.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;

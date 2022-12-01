@@ -1,14 +1,12 @@
-package com.example.voteq.controller;
+package com.example.controller;
 
-import com.example.voteq.model.VoteDTO;
-import com.example.voteq.service.VoteService;
+import com.example.service.VoteService;
+import com.example.model.VoteDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 

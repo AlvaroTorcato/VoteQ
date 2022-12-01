@@ -1,8 +1,8 @@
-package com.example.voteq.service;
+package com.example.service;
 
-import com.example.voteq.model.UserDetailsDTO;
-import com.example.voteq.model.VoteAPOD;
-import com.example.voteq.model.VoteDTO;
+import com.example.model.UserDetailsDTO;
+import com.example.model.VoteAPOD;
+import com.example.model.VoteDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
