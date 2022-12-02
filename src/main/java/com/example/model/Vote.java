@@ -62,4 +62,13 @@ public class Vote implements Serializable {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+    @Override
+    public String toString() {
+        return "Vote{" +
+                "id=" + id +
+                ", vote=" + vote +
+                ", reviewId=" + reviewId +
+                ", userId=" + userId +
+                '}';
+    }
 }

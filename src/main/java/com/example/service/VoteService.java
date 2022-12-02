@@ -48,10 +48,7 @@ public class VoteService {
     public List<VoteDTO> searchVotes(int idReview) throws IOException {
         List<VoteDTO> votes = repository.findVotesInReview(idReview);
         if (votes == null){
-            votes = service.retrieveVoteFromApi(idReview);
-            if (votes == null){
-                throw  new ResponseStatusException(HttpStatus.NOT_FOUND, "Vote Not Found");
-            }
+            throw  new ResponseStatusException(HttpStatus.NOT_FOUND, "Vote Not Found");
         }
         return votes;
     }
