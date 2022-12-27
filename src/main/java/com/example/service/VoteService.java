@@ -45,6 +45,10 @@ public class VoteService {
         return reviewDTO;
     }
 
+    public void createVote(final Vote vote) throws IOException {
+        if(repository.findById(vote.getId())== null) repository.save(vote);
+    }
+
     public List<VoteDTO> searchVotes(int idReview) throws IOException {
         List<VoteDTO> votes = repository.findVotesInReview(idReview);
         if (votes == null){

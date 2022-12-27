@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+
 /*@EnableRabbit
 @Component
 @RabbitListener(queues = "votes1_queue_fanout", id = "listener")*/
@@ -20,6 +22,9 @@ import org.springframework.stereotype.Service;
 public class RabbitMQReceiver {
     @Autowired
     VoteRepository repository;
+
+    @Autowired
+    VoteService service;
     private static Logger logger = LogManager.getLogger(RabbitMQReceiver.class.toString());
     /*@RabbitHandler
     public void receiver(Vote vote) {
@@ -27,7 +32,7 @@ public class RabbitMQReceiver {
         logger.info("MenuOrder listener invoked - Consuming Message with MenuOrder Identifier : " + vote.toString());
     }*/
     @RabbitListener(queues= "#{autoDeleteQueue.name}")
-    public void consumeJsonMessage(String str)throws JsonProcessingException {
+    public void consumeJsonMessage(String str) throws IOException {
         logger.info("MenuOrder listener invoked - Consuming Message with MenuOrder Identifier : " + str);
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -36,6 +41,8 @@ public class RabbitMQReceiver {
 
         //jwtService.createJWT(obj);
 
-        repository.save(obj);
+        //repository.save(obj);
+
+        service.createVote(obj);
     }
 }
